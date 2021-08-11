@@ -1,0 +1,61 @@
+body{
+    background-image: url('../img/fotofundo2.jpg');
+    background-size: 100vw auto;
+    background-repeat: no-repeat;
+    font-family: Arial;
+    height: 100vh;
+    font-size: 12px;
+}
+
+/*se a tela tiver pelo menos 400px vai carregar estes estilos*/
+@media (min-whidth: 400px){
+    body{
+        font-size: 14px;
+        background-color:limegreen;
+    }
+}
+
+/*breakpoint - responsivo*/
+@media (min-width: 1200px){
+    body{
+        font-size: 20px;
+        background-image: none;
+        background-color: deeppink;
+    }
+}
+
+a{
+    color: teal;
+
+text-decoration: none;
+
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.menu{
+    background-color: white;
+
+}
+.menu ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+.menu li{
+    list-style: none;
+}
+
+.site-titulo, 
+.site-subtitulo{
+    color: whitesmoke;
+    text-align: center;
+  
+}  
+.site-subtitulo{
+    font-style: italic;
+}
+
+
