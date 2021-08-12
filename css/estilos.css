@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Press+Start+2P&family=Source+Code+Pro:wght@300;400;700&display=swap');
+
+/*soft reset do css*/
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
 body{
     background-image: url('../img/fotofundo2.jpg');
     background-size: 100vw auto;
@@ -5,13 +14,21 @@ body{
     font-family: Arial;
     height: 100vh;
     font-size: 12px;
+    color:black;
+    font-family: 'Source Code Pro', monospace;
 }
 
 /*se a tela tiver pelo menos 400px vai carregar estes estilos*/
 @media (min-whidth: 400px){
     body{
         font-size: 14px;
-        background-color:limegreen;
+       
+    }
+}
+/*breakpoint - responsivo*/
+@midia(min-width: 600px){
+    body{
+        font-size: 18px;
     }
 }
 
@@ -19,8 +36,7 @@ body{
 @media (min-width: 1200px){
     body{
         font-size: 20px;
-        background-image: none;
-        background-color: deeppink;
+     
     }
 }
 
@@ -35,10 +51,32 @@ a:hover{
     text-decoration: underline;
 }
 
-.menu{
-    background-color: white;
+header{
+    height: 100vh;
+    display: flex;
+    justify-content: center; /*orizontel*/
+    align-items: center; /*vertical*/
+    flex-direction: column; /*deixar um de baixo do outro*/
 
 }
+
+
+.menu{
+    background-color: white;
+    position: fixed; /*posicao fixa*/
+    top:0;/*sem margem*/
+    width: 100vw; /*largura*/
+
+}
+
+.menu li a{
+    padding: 10px 20px;
+    display: block;
+
+}
+
+
+
 .menu ul{
     display: flex;
     justify-content: space-around;
@@ -50,12 +88,47 @@ a:hover{
 
 .site-titulo, 
 .site-subtitulo{
-    color: whitesmoke;
+    color: black;
     text-align: center;
   
-}  
-.site-subtitulo{
-    font-style: italic;
+} 
+
+.site-titulo{
+    font-size: 4em;
+    font-family: 'Gloria Hallelujah',
+     cursive;
+  
 }
 
+
+.site-subtitulo{
+    font-style: italic;
+    font-family: 'Press Start 2P', 
+    cursive;
+    line-height: 1.8em;
+
+}
+
+.img-portifolio{
+    height: 180px;
+    width: 180px;
+}
+
+.portifolio{
+    padding: 2em;
+    height: 100vh;
+}
+
+.portifolio h2{
+    font-family: 'Press start 2P';
+    color:black;
+    margin-bottom: 1.5em;
+    font-size: 2em;
+}
+
+.portifolio .grid{
+    display: grid;
+    gap: 2em;
+    grid-template-columns: 240px 240px;
+}
 
