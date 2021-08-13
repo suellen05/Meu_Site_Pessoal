@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Press+Start+2P&family=Source+Code+Pro:wght@300;400;700&display=swap');
 
+
+:root{
+    --cor-do-texto:black    ;
+}
+
 /*soft reset do css*/
 *{
     margin: 0;
@@ -14,7 +19,7 @@ body{
     font-family: Arial;
     height: 100vh;
     font-size: 12px;
-    color:black;
+    color: var(--cor-do-texto);
     font-family: 'Source Code Pro', monospace;
 }
 
@@ -26,7 +31,7 @@ body{
     }
 }
 /*breakpoint - responsivo*/
-@midia(min-width: 600px){
+@media(min-width: 600px){
     body{
         font-size: 18px;
     }
@@ -72,10 +77,9 @@ header{
 .menu li a{
     padding: 10px 20px;
     display: block;
+    transition: background-color 1s , color 0.5s;
 
 }
-
-
 
 .menu ul{
     display: flex;
@@ -86,9 +90,34 @@ header{
     list-style: none;
 }
 
+
+.menu li a:hover,
+    .menu li a:active{
+        background-color: rgb(165, 14, 185);
+        color: white;
+    }
+
+.titulo{
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+    animation: 1s ease 2s animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo{
+    from{
+        transform: scale(0.2) translateY(50vh);
+        opacity: 0;
+        }
+
+        to{
+            transform: scale(1) translateY(0);
+            opacity: 1;
+        }
+}
+
 .site-titulo, 
 .site-subtitulo{
-    color: black;
+    color:var(--cor-da-texto);
     text-align: center;
   
 } 
@@ -109,26 +138,53 @@ header{
 
 }
 
-.img-portifolio{
-    height: 180px;
-    width: 180px;
-}
-
-.portifolio{
+.portifolio,
+.contato{
     padding: 2em;
-    height: 100vh;
+    min-height: 100vh;
+
 }
 
-.portifolio h2{
+.portifolio h2,
+.contato h2{
     font-family: 'Press start 2P';
-    color:black;
+    color: var(--cor-do-texto);
     margin-bottom: 1.5em;
     font-size: 2em;
+    text-align: center;
 }
 
 .portifolio .grid{
     display: grid;
     gap: 2em;
-    grid-template-columns: 240px 240px;
+   /* grid-template-columns:220px 220px 220px 220px;/*espaco da colunas (qtas colunas qr)*/
+}
+
+@media (min-width: 560px){
+    .portifolio .grid{
+        grid-template-columns: 240px 240px;
+    }
+}
+
+@media (min-width:880px){
+    .portifolio .grid{
+        grid-template-columns: repeat(4, 260px);/*260 largura*/
+        justify-content: center;
+        align-items: center;
+        height: calc(100vh - 8m - 48px); /*altura imagem*/
+    }
+}
+
+.portifolio figure{
+    text-align: center;
+}
+
+.img-portifolio{
+    height: 180px;
+    width: 240px;
+   
+    object-position: left top;
+    object-position: left center;
+    
 }
 
